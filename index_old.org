@@ -1,0 +1,135 @@
+:PROPERTIES:
+#+TITLE: 減少 Emacs 的 Config Hell
+#+SUBTITLE: 從 Spacemacs 入門 Emacs
+#+DATE: <2017-08-05 Sat>
+#+AUTHOR: hyp
+#+EMAIL: hyp@gmail.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+#+COMPANY: Emacs.tw
+
+#+FAVICON: images/org-icon.png
+#+ICON: images/emacs-icon.png
+#+HASHTAG: Hash tag is in here
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+:END:
+
+
+* SPACEMACS
+   :PROPERTIES:
+   :TITLE:    dark
+   :SLIDE:    hide dark
+   :ASIDE:    center bottom
+   :END:
+
+   #+BEGIN_CENTER
+   #+ATTR_HTML: :width 100%
+   [[file:images/SPACEMACS.png]]
+   #+END_CENTER
+
+* Emacs 入門痛點
+  :PROPERTIES:
+  :TITLE:    dark
+  :SLIDE:    segue dark quote
+  :ASIDE:    center bottom
+  :END:
+
+** EMACS
+   Esc Mata Alt Control Shift
+
+** 腕隧道症候群、重複使力傷害
+   #+BEGIN_CENTER
+   #+ATTR_HTML: :width 300px
+   [[file:images/RSI.jpg]]
+   #+END_CENTER
+
+** Configuration
+   - LISP
+   - package選擇焦慮
+
+* What's Spacemacs
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** Spacemacs 是 Emacs 的一組 Config
+   - Comunity base
+   - pretty merge evil-mode (vi keybinding)
+   - prefix key (vim)
+
+** editors learning curve
+   #+BEGIN_CENTER
+   #+ATTR_HTML: :width 100%
+   [[file:images/editor_curves.jpg]]
+   #+END_CENTER
+
+** vi, emacs learning curve
+   :PROPERTIES:
+   :TITLE:    nil
+   :END:
+
+   #+BEGIN_CENTER
+   #+ATTR_HTML: :width 100%
+  [[file:images/vi_emacs_curve.jpeg]]
+   #+END_CENTER
+
+** so spacemacs learning curve (joke)
+   #+BEGIN_CENTER
+   #+ATTR_HTML: :width 200%
+   [[file:images/spacemacs_joke.jpeg]]
+   #+END_CENTER
+
+** spacemacs learning curve
+   #+BEGIN_CENTER
+   #+ATTR_HTML: :width 80%
+   [[file:images/no.jpg]]
+   #+END_CENTER
+
+** truely spacemacs learning curve
+   #+BEGIN_CENTER
+   #+ATTR_HTML: :width 100%
+   [[file:images/spacemacs_curve.jpeg]]
+   #+END_CENTER
+
+** 需求 & 安裝
+   - Emacs 24.4+
+
+** configuration
+
+** bast practive configuration .spacemacs.d
+
+** spacemacs pholosiphy
+
+** space
+
+** holy and evil
+
+** emacs lisp intro
+
+** layer
+
+** create-layer
+
+** create your own layer
+
+
+* Thank You ˊ・ω・ˋ
+:PROPERTIES:
+:SLIDE: thank-you-slide segue
+:ASIDE: right
+:ARTICLE: flexbox vleft auto-fadein
+:END:
+
+* Footnotes
+
+[fn:1] Footnote is in here!

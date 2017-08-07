@@ -1,0 +1,97 @@
+* 以 Spacemacs 為主的推坑式介紹
+** 什麼樣的功能會吸引別人來用?
+   可以參考 https://www.youtube.com/channel/UC8-c0VKKqkG_aPe0RG3SF0A 編輯者
+   ，介紹了很多針對寫 web 的人有吸引力的功能，看能否在 Emacs 上用 "簡單" 的方式重現。
+   (p.s. 有個用 TypeScript 對 JavaScript 作靜態分析的比較困難)
+
+** Spacemacs 101
+   針對初學者:
+   - 安裝 Emacs
+   - 安裝 Spacemacs
+   - spacemacs.el 介紹
+   - 用 spacemacs.d 取代 spacemacs.el
+   - spacemacs layer 的撰寫入門
+   - holy, evil, and hybird mode
+
+
+* Coding Support
+  寫 code 上有幫助的工具。
+** magit
+** flycheck
+** company
+** build, compile
+   Emacs 原本就有 call make 的方式，寫個 makefile build 各語言/環境 的 code 基本上是一招，
+   但有沒有直接用 emacs call 正夯的 build tool (ex. npm、gradle 等) 又不用設定太多的方式?
+
+** term
+
+** debug
+   emacs + gdb 可能比較少人會想聽 (web frontend 正夯)，eslint 可能也不太算 debug 工具...
+
+** yasnippet
+*** web front 正夯，emmet 也許也以以考慮。
+
+* Emacs 的日常
+  無關寫 Code ，Emacs 在日常應用的介紹。
+** Org-mode
+** Hexo
+** 音樂
+*** spotify-mode
+   但我還沒試，但介紹人家的產品可能不太好。
+
+*** EMMS
+
+** file manager
+   dired, dired+ 為主的教學。
+
+* Editor 上的奇淫技巧
+  Emacs Rock 上的影片有些主題可以參考: http://emacsrocks.com
+** Unix 組合技
+   shell-command-on-region，把 buffer 的資料 pipe 給 grep, sed, awk 等 Unix 的工具得到自己要的東西。
+   (但 sed, awk 等現在很少人用，這主題可能不太好。)
+
+** Emacs macro
+   - 定義與執㣔 macro (F3, F4)
+   - 編輯 macro
+
+* Make Emacs Grate Again
+  介紹 Emacs 新版本的功能，與應用。(可能比較少人會想聽)
+** Dynamic Modules (v25)
+** Concurrent (v26)
+
+* Windows
+  解 Emacs 在 Windows 上的問題不知道可不可以當個主題。
+  ref: [[http://yehnan.blogspot.tw/2010/06/gnu-emacs-on-windows.html][GNU Emacs on Windows]]
+  用 MSYS2 可能更好: [[https://www.gnu.org/software/emacs/download.html][Emacs Official]]
+
+* vscode
+
+** Bookmarks
+   可以記錄程式碼片斷的所在地。
+
+** minimap
+   這就算了，沒什麼用。
+
+** drag and drop
+   沒用
+
+** JSDoc
+   自動產生 JSDoc block
+
+** task runner 的 line number
+   跑 test 可以跑在 cursor 上的 code
+
+** shortcut editor
+   emacs 有嗎?
+
+** ripgrep 整合
+
+** async call stacks
+   node
+
+** 外部 script 下斷點
+
+   node
+
+* vim
+  A.L.E - syntax check

@@ -1,0 +1,105 @@
+* 講稿
+
+  大家好，
+
+  -- Emacs 痛點
+  在進入正題之前想先說一下個人覺得入門Emacs的痛點，
+  首先大部份人都知道Emacs不像Vi像樣有分Normal, Insert, Visual 等不同的Mdoe，
+  Vi可以在Normal mode下用單鍵進行操作進Insert編輯在Visual mode選取，
+  而Emacs的編輯區沒有這種Mode的分別，要操作就需要Control, Meta, Shift等鍵組合，
+  所以Emacs也被戲稱 Escape Meta Alt Control Shift，長時間要這樣操作鍵盤，很有可能得到腕隧道症候群，
+  這雖然是Vimer評論Emacs的笑話，某方面來說也不那說錯，這算是第一個痛點。
+  第二個痛點也是本次議程的主題，Emacs的Configuration，以往入門 Emacs 最麻煩也最容易讓人放棄的部份就是調整 Config 了，
+  雖然 Github 上有能找到相當多設定，也有很多入門用的 .emacs.d (emacs 的設定存放的名稱)
+  如 prelude，但總是不合自己的習慣，所以常常想改用 Emacs 結果撐一周就放棄而回去用以前的環境了 (ex 我自己)，
+  以我自己的經驗來說，原本用 Vim 約 5 年，期間一直想給用 Emacs ，但在設定一些 package 後，
+  用沒多久又放棄回去 Vim 的懷抱，因為 Config 似乎再怎麼設定都很難到原本想要的效果，就算拿大神的回來改也一樣，
+  而且 Emacs 的 Config 是用 LISP 的，對入門者來說一開始卡在這太不值得了。
+  (Emacs 痛點)
+
+  -- ? spacemacs
+  回到這場議程的主題 - Spacemacs，Spacemacs 做為一組 Emacs 的 Configuration 最一開始是希望可以整合 Emacs 中一個引入 vi 操作的 package - evil-mode ，
+  且統一其它 package 的操作為目標，聽到這裡可能有人就會想 : vi 的學習曲線是 <vi learning curve> 而 Emacs 的學習曲線是長 : <Emacs learning curve>，
+  那 Spacemacs 這樣一整合不就 : <Spacemacs learning curve> 變這樣了嗎!! 太可怕了! <我覺得不行> 是，我知道，而且沒有人覺得這可以，
+  Spacemacs 雖然是以整合 evil-mode 為目地，但發展到現在對原本 Emacs 的 keybinding 整合相當完整了，沒有一定要用 vi 的操作，
+  不論是不是有學過 vi ，對入門者的學習曲線是 : <Spacemacs learning curve, true>。
+  (? spacemacs)
+  
+  -- lost Why spacemacs
+  為什麼我認為初學者可以從 Spacemacs 入門? 因為Spacemacs和其它 Emacs config 相比有幾項持點:
+  Comunity base, 和 vi 的整合, 從Vim 引入 prefix key 的概念。
+  Spacemacs 目前在 github 上約有 1 萬個 star ，比起前他大神的個人 dot Emacs 多了許多，
+  同時也因為他是社群貢<現>的config，版本演進快，也有較多開發環境的支援。
+  
+
+  (Why spacemacs)
+ 
+ 
+  -- Startup
+  
+  Spacemacs 的需求是 Emacs ?? 版以上，在 *nix 作業系統上比較沒什麼問題，Windows 使用者建議用 ?? 裝 Emacs。
+  接者安裝 Spacemacs，如果是下載 .zip 的朋友解壓縮後移到使用者目綠下並命名為 .emacs.d 即可 (Windows 使用者則 ??)，
+  然後就可以開啟 Emacs，第一次執行的時後會 ??，Spacemacs 的安裝到這邊告一段落 <真的很簡單的>。
+
+  Spacemacs 除了對原本 Emacs 所需要的 .emacs.d 之外，在第一次開 Spacemacs 環境後會自動產出一份 .spacemacs 在使用者目綠下，
+  這個檔案是存放 spacemacs 的設定使用，如前述的 holy-mode 與 evil-mode 的設定，或是 spacemacs 的 "Layer" 設定都在這個檔案中，
+  "Layer" 是什麼在後面的介紹會再說明。
+  (Startup)
+  
+  -- Spacemacs
+  
+  Spacemacs 除了整合 evil-mode 也就是 vi keybinding 外，還導入了 vim 的一項功能 - leader key ，
+  Spacemacs 之所以名字中有 "Space"，就是把空白鍵作為 leader key (holy-mode 中預設是 C-m)，
+  leader key 可以取代掉原本很多需要用 Control 和其它鍵一起按下的組合鍵，這最大的好處就是減少使用者RSI(Repetitive strain injury) 的風險，
+  不會為了按 control 而小指骨折等 <小指骨折>... (當然也可以 Ctrl 和 Capslock 交換位置或買HHKB之類的)。
+
+  Spacemacs 的leader key整合相當完善，按鍵有一個固定的規則，就算忘了也可以 show 出來給你看 <helm popup leader key>，
+  不過對沒有用過 Emacs 的人來說這個 helm popup 跳出來的這些名稱還是需要知道在 Emacs 上是指什麼，
+  其中最常用到，對入門者最容易困惑的是: frame，buffer，window <helm popup 2>，
+  這三個名稱是 Emacs 對編輯介面的名稱 <frame, buffer, window>，frame是指 : ?，而 buffer 是指 ?，window擇是 ?，
+  對 vimer 來說 sp, vsp, tab 分別就是 ? ，而對其它 IDE 或是 VSCode，Atom 等，Emacs 是只有編輯區域，所有事情都用編輯區域完成，
+  而不像 VSCode 那像 <VSCode 介面> 那樣是用一個功能完全不同的區域處理其它工作，這也是用過 IDE，
+  或 GUI Editor User 難以習慣 Emacs/Vim 這類原本在終端機編輯器的原因。
+
+
+  接下來要介紹在 Emacs 中相當好用的工具，且在Spacemacs中整合非常完整:
+  Dired
+  Dired是Emacs上的file manager，
+  Magit
+  Magit是一個Emacs上的git工具，
+  ediff (smerge-ediff)
+
+
+  M-x
+  過去 Emacs 使用者最喜歡說 Emacs 強大的地方就是M-x，M-x其實就是執行ELisp Code 所寫的功能，在現在一些新的Editor中，
+  如VS Code、Sublime等有想似的功能是直接打指令<VS Code 輸入 Command>，
+  其實很多功能不太需要設定快捷，有指令執行這項功能其實很方便，只要知道功能名稱就好。
+
+  (Spacemacs)
+  
+  -- Emacs Lisp Intro
+  (Emacs Lisp Intro)
+
+  -- Layer
+  在 Spacemacs 上建立一個自己的 Layer 很簡單，只要 SPC SPC create_layer ，
+  Spacemacs 就會在 layer 的 Layer 的資料夾下開一個 sub directory
+
+  (Layer)
+
+  -- Tip
+  這邊我想先分享一些個人覺得比較好的設定方式: spacemacs 目前己經支援 .spacemacs.d 取代 .spacemacs，
+  並將原本 .spacemacs 改為 .spacemacs.d/init.el 而在 .spacemacs.d 下可以存放個人的 "Layer"，
+  對於有與趣追 Spacemacs 開發的人這樣方便很多，因為不用再去切 branch 及 rebase、merge 新版等操作，
+  讓 .emacs.d 維持純 Spacemacs 開發線，有想要發 PR 時再把自己的東西移進去就好。
+  (Tip)
+
+  Layer
+  Layer 是: ??
+ 
+  在 spacemacs
+
+
+
+
+程式都還沒開始寫設定就弄半天，
+  這大家都有經驗，Emacs 會越來越少人使用這也是原因之一，

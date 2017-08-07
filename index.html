@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>COSCUP2</title>
+<meta name="author" content="(hyp)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="reveal.js-3.5.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="reveal.js-3.5.0/css/theme/blood.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'reveal.js-3.5.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section>
+<section id="slide-orgc08e0ba" data-background="./images/SPACEMACS.png" data-background-size="1280px" data-background-transition="slide">
+<h2 id="orgc08e0ba"></h2>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org8d49d7f">
+<h2 id="org8d49d7f">About Me</h2>
+<p>
+hyp
+</p>
+
+<p>
+<del>擅長</del> 喜愛 Lisp 的朋友
+</p>
+
+<ul>
+<li>Emacs.tw</li>
+<li>Clojure.tw</li>
+
+</ul>
+
+</section>
+<section id="slide-orge589238">
+<h3 id="orge589238">-er</h3>
+<ul>
+<li>Vimer</li>
+<li>Emacser</li>
+<li>lisper</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orge3d66e2">
+<h2 id="orge3d66e2">Emacs 痛點</h2>
+<div class="outline-text-2" id="text-orge3d66e2">
+</div></section>
+<section id="slide-org1e61ee0" data-background="./images/RSI.jpg">
+<h3 id="org1e61ee0">腕隧道症候群、重複使力傷害</h3>
+
+</section>
+<section id="slide-orgc776f2f" data-background="./images/EMACS_KEYS.jpg">
+<h3 id="orgc776f2f">Esc Meta Alt Control Shift</h3>
+
+</section>
+<section id="slide-org2f670f3">
+<h3 id="org2f670f3">Emacs Lisp</h3>
+<div class="org-src-container">
+
+<pre  class="src src-elisp">(<span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">hamming-distance</span> (string-1 string-2)
+  (<span style="color: #4f97d7; font-weight: bold;">let</span> ((dna-1 (string-to-list string-1))
+        (dna-2 (string-to-list string-2))
+        (distance 0)
+        (counter 0))
+    (<span style="color: #4f97d7; font-weight: bold;">if</span> (= (length dna-1) (length dna-2))
+        (<span style="color: #4f97d7; font-weight: bold;">while</span> (&lt; counter (length dna-1))
+          (<span style="color: #4f97d7; font-weight: bold;">if</span> (not (= (nth counter dna-1) (nth counter dna-2)))
+              (<span style="color: #4f97d7; font-weight: bold;">setq</span> distance (1+ distance)))
+          (<span style="color: #4f97d7; font-weight: bold;">setq</span> counter (1+ counter)))
+      (<span style="color: #dc752f; background-color: #292b2e;">error</span> <span style="color: #2d9574;">"invalid to get distance for different length strings"</span>))
+    distance))
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orga2ad073">
+<h2 id="orga2ad073">(? spacemacs)</h2>
+<div class="outline-text-2" id="text-orga2ad073">
+</div></section>
+<section id="slide-org97639d9" data-background="./images/emacs-vim-icons.png" data-background-size="500px">
+<h3 id="org97639d9"></h3>
+
+</section>
+<section id="slide-org3ecabd2" data-background="./images/vi_emacs_curve.jpeg" data-background-size="500px">
+<h3 id="org3ecabd2"></h3>
+
+</section>
+<section id="slide-org94deb8a" data-background="./images/spacemacs_joke.jpeg" data-background-size="500px">
+<h3 id="org94deb8a"></h3>
+
+</section>
+<section id="slide-org168e3a1" data-background="./images/Spacemacs_logo.png" data-background-size="500px">
+<h3 id="org168e3a1"></h3>
+
+</section>
+<section id="slide-org3eb1fc1" data-background="./images/spacemacs_curve_true_1.jpg" data-background-size="500px">
+<h3 id="org3eb1fc1"></h3>
+
+</section>
+</section>
+<section>
+<section id="slide-org0378b25">
+<h2 id="org0378b25">WHY spacemacs</h2>
+<ul>
+<li class="fragment appear">Community-driven</li>
+<li class="fragment appear">merge evil-mode (vi keybinding)</li>
+<li class="fragment appear">prefix key (vim)</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orge2a5017">
+<h2 id="orge2a5017">Startup</h2>
+<ul>
+<li>Emacs 24.4+</li>
+
+</ul>
+
+</section>
+<section id="slide-org2259d54">
+<h3 id="org2259d54">Unix-like</h3>
+<ul>
+<li>package manager (apt pacman yum homebrew)</li>
+<li>build from source code</li>
+
+</ul>
+
+</section>
+<section id="slide-orgcde8ee2">
+<h3 id="orgcde8ee2">Windows</h3>
+<ul>
+<li>emacs-w64 project</li>
+<li class="fragment highlight-red">自定環境變數 HOME</li>
+
+</ul>
+
+</section>
+<section id="slide-org19020a7">
+<h3 id="org19020a7">Quick Install</h3>
+<p>
+git clone:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-bash">git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+</pre>
+</div>
+<p>
+or
+</p>
+<pre class="example">
+Download .zip from Offical Site, 
+Upzip to $HOME/ and rename to .emacs.d.
+</pre>
+
+</section>
+<section id="slide-org6c86e98" data-background="images/windows_env.png" data-background-size="60%">
+<h3 id="org6c86e98"></h3>
+
+</section>
+<section id="slide-orgbe3f2aa">
+<h3 id="orgbe3f2aa">Three Question</h3>
+<ul>
+<li>What is your preferred editing style?</li>
+<li>What distribution of spacemacs would you like to start with?</li>
+<li>What type of completion framwork do you want?</li>
+
+</ul>
+
+</section>
+<section id="slide-orgbb1165b" data-background="images/spacemacs_init.gif" data-background-size="60%">
+<h3 id="orgbb1165b"></h3>
+</section>
+<section id="slide-org0e21239" data-background="images/spacemacs_startup.png" data-background-size="60%">
+<h3 id="org0e21239"></h3>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf3244ae">
+<h2 id="orgf3244ae">Spacemacs</h2>
+<div class="outline-text-2" id="text-orgf3244ae">
+</div></section>
+<section id="slide-orgcf86435">
+<h3 id="orgcf86435">Frame, Windows, Buffer</h3>
+
+</section>
+<section id="slide-org8a5166a" data-background="images/frame.png" data-background-size="1280px">
+<h3 id="org8a5166a"></h3>
+
+</section>
+<section id="slide-org757933e" data-background="images/window.png" data-background-size="1280px">
+<h3 id="org757933e"></h3>
+
+</section>
+<section id="slide-org8b10b3b" data-background="images/buffer.png" data-background-size="1280px">
+<h3 id="org8b10b3b"></h3>
+</section>
+<section id="slide-org6d69057">
+<h3 id="org6d69057">evil &amp; holy</h3>
+<ul>
+<li>evil (vi keybinding)</li>
+<li>holy (emacs origin keybinding)</li>
+
+</ul>
+
+</section>
+<section id="slide-org1410890">
+<h3 id="org1410890">SPC key</h3>
+<ul>
+<li>evil (space)</li>
+<li>holy (M-m)</li>
+
+</ul>
+
+</section>
+<section id="slide-org715968e">
+<h3 id="org715968e">helm</h3>
+
+</section>
+<section id="slide-org7cd0e85" data-background="./images/helm_popup.gif" data-background-size="1024px">
+<h3 id="org7cd0e85"></h3>
+
+
+</section>
+<section id="slide-org99e31de">
+<h3 id="org99e31de"></h3>
+<div class="org-src-container">
+
+<pre  class="src src-elisp">dotspacemacs-configuration-layers
+'(
+  <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">----------------------------------------------------------------</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Example of useful layers you may want to use right away.</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Uncomment some layer names and press &lt;SPC f e R&gt; (Vim style) or</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">&lt;M-m f e R&gt; (Emacs style) to install them.</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">----------------------------------------------------------------</span>
+  (org <span style="color: #4f97d7;">:variables</span>
+       org-enable-github-support t
+       org-enable-reveal-js-support t)
+  (shell <span style="color: #4f97d7;">:variables</span>
+         shell-default-height 30
+         shell-default-position 'bottom)
+  (clojure <span style="color: #4f97d7;">:variables</span> clojure-enable-fancify-symbols t)
+  (python default 'unused)
+  git
+  javascript
+  nginx
+
+  <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">other layers ....</span>
+</pre>
+</div>
+
+</section>
+<section id="slide-orgff3ec94" data-background="images/offical.png" data-background-size="800px">
+<h3 id="orgff3ec94"></h3>
+
+</section>
+<section id="slide-org4b869a1" data-background="images/offical_layers.png" data-background-size="800px">
+<h3 id="org4b869a1"></h3>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb61c197">
+<h2 id="orgb61c197">Emacs Lisp Intro</h2>
+<div class="outline-text-2" id="text-orgb61c197">
+</div></section>
+<section id="slide-orgbc086a7">
+<h3 id="orgbc086a7">Symbol</h3>
+<div class="org-src-container">
+
+<pre  class="src src-elisp">(<span style="color: #4f97d7; font-weight: bold;">setq</span> symbol <span style="color: #2d9574;">"val"</span>)
+(<span style="color: #4f97d7; font-weight: bold;">setq-default</span> global-symbol <span style="color: #2d9574;">"val"</span>)
+</pre>
+</div>
+
+</section>
+<section id="slide-orge48137a">
+<h3 id="orge48137a">List</h3>
+<div class="org-src-container">
+
+<pre  class="src src-elisp">(list evil org python)
+</pre>
+</div>
+<p>
+or
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-elisp">'(evil org python)
+</pre>
+</div>
+
+</section>
+<section id="slide-org5060316">
+<h3 id="org5060316">defun</h3>
+<div class="org-src-container">
+
+<pre  class="src src-elisp">(<span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">cos</span> (where)
+  <span style="color: #2aa1ae;">"cos what?"</span>
+  (<span style="color: #4f97d7; font-weight: bold;">if</span> (string= (downcase where) <span style="color: #2d9574;">"cwt"</span>)
+      (message <span style="color: #2d9574;">"cosplay"</span>)
+    (message <span style="color: #2d9574;">"coscup"</span>)))
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org1a67a8e" data-background="images/cat.jpg">
+<h2 id="org1a67a8e"></h2>
+
+</section>
+</section>
+<section>
+<section id="slide-org0bc27db">
+<h2 id="org0bc27db">Layer</h2>
+<div class="outline-text-2" id="text-org0bc27db">
+</div></section>
+<section id="slide-orgf3122f5">
+<h3 id="orgf3122f5">custom layer structure</h3>
+<pre class="example">
+layer +
+      |- packages.el
+      |- layers.el (optional)
+      |- funcs.el (optional)
+      |- config.el (optional)
+      |- keybindings.el (optional)
+      |- README.org (optional)
+</pre>
+
+</section>
+<section id="slide-org131cc61" data-background="images/create_layer.gif" data-background-size="1024px">
+<h3 id="org131cc61">create layer</h3>
+
+</section>
+<section id="slide-org4ee1cbb" data-background="images/add_layer.png" data-background-size="1024px">
+<h3 id="org4ee1cbb"></h3>
+
+</section>
+<section id="slide-org0747666">
+<h3 id="org0747666">packages.el</h3>
+<div class="org-src-container">
+
+<pre  class="src src-elisp">(<span style="color: #4f97d7; font-weight: bold;">defconst</span> <span style="color: #7590db;">demo-packages</span>
+  '(coscup))
+
+<span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">package init function</span>
+(<span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">demo/init-coscup</span> ()
+  (<span style="color: #4f97d7; font-weight: bold;">use-package</span> <span style="color: #a45bad;">coscup</span>))
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgeabb097">
+<h2 id="orgeabb097">key bindings</h2>
+<ul>
+<li><p>
+"SPC o" and "SPC m o" are reserved for the user
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-elisp">(spacemacs/set-leader-keys <span style="color: #2d9574;">"oa"</span> 'replace-string)
+</pre>
+</div></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf561cbe">
+<h2 id="orgf561cbe">Tip</h2>
+<div class="outline-text-2" id="text-orgf561cbe">
+</div></section>
+<section id="slide-org40ec1b5">
+<h3 id="org40ec1b5">private config</h3>
+<p>
+directory structure:
+</p>
+<pre class="example">
+.spacemacs.d +
+             |- private +
+             |          |- foo.el
+             |          |- bar.el
+             |- init.el
+             |- layers
+</pre>
+
+<p>
+init.el: 
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-elisp"><span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">~/.spacemacs.d/init.el</span>
+(<span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">dotspacemacs/user-init</span> ()
+  (mapc 'load
+        (file-expand-wildcards
+         (concat dotspacemacs-directory <span style="color: #2d9574;">"private/*.el"</span>))))
+</pre>
+</div>
+
+<p>
+.gitignore:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-text">private/
+</pre>
+</div>
+
+</section>
+<section id="slide-org0249463">
+<h3 id="org0249463">The Swirl</h3>
+
+</section>
+<section id="slide-org802f0ff" data-background="./images/spacemacs_curve_true_2.jpeg" data-background-size="1024px">
+<h3 id="org802f0ff"></h3>
+
+</section>
+<section id="slide-org490422f">
+<h3 id="org490422f"></h3>
+<div class="org-src-container">
+
+<pre  class="src src-elisp">(<span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">dotspacemacs/layers</span> ()
+
+  dotspacemacs-distribution 'spacemacs-base
+
+  <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">...</span>
+
+  )
+</pre>
+</div>
+
+</section>
+<section id="slide-org211d9db">
+<h3 id="org211d9db"></h3>
+<pre class="example">
+.spacemacs.d/layers/+spacemacs
+├── hyp-completion
+│   ├── README.org
+│   ├── config.el
+│   ├── funcs.el
+│   └── packages.el
+├── hyp-editing
+│   ├── README.org
+│   ├── funcs.el
+│   ├── local
+... 
+</pre>
+
+</section>
+</section>
+<section>
+<section id="slide-org7f3e964">
+<h2 id="org7f3e964">Thank you ˊ・ω・ˋ</h2>
+<p>
+Emacser.tw: 
+<a href="https://emacser.tw">https://emacser.tw</a> 
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="reveal.js-3.5.0/lib/js/head.min.js"></script>
+<script src="reveal.js-3.5.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'reveal.js-3.5.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'reveal.js-3.5.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'reveal.js-3.5.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'reveal.js-3.5.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'reveal.js-3.5.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

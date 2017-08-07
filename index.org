@@ -1,0 +1,349 @@
+#+REVEAL_ROOT: reveal.js-3.5.0
+#+Title: COSCUP2
+#+Author: hyp
+#+REVEAL_THEME: blood
+#+REVEAL_TRANS: linear
+#+OPTIONS: toc:nil reveal_mathjax:t num:nil reveal_title_slide:nil
+
+* 
+    :PROPERTIES:
+    :reveal_background: ./images/SPACEMACS.png
+    :reveal_background_size: 1280px
+    :reveal_background_trans: slide
+    :END:
+    
+    
+* About Me
+  hyp
+  
+  +擅長+ 喜愛 Lisp 的朋友
+
+  - Emacs.tw
+  - Clojure.tw
+
+** -er
+  - Vimer
+  - Emacser
+  - lisper
+
+* Emacs 痛點
+** 腕隧道症候群、重複使力傷害
+   :PROPERTIES:
+   :reveal_background: ./images/RSI.jpg
+   :END:
+
+** Esc Meta Alt Control Shift
+   :PROPERTIES:
+   :reveal_background: ./images/EMACS_KEYS.jpg
+   :END:
+   
+** Emacs Lisp
+   #+BEGIN_SRC elisp
+     (defun hamming-distance (string-1 string-2)
+       (let ((dna-1 (string-to-list string-1))
+             (dna-2 (string-to-list string-2))
+             (distance 0)
+             (counter 0))
+         (if (= (length dna-1) (length dna-2))
+             (while (< counter (length dna-1))
+               (if (not (= (nth counter dna-1) (nth counter dna-2)))
+                   (setq distance (1+ distance)))
+               (setq counter (1+ counter)))
+           (error "invalid to get distance for different length strings"))
+         distance))
+   #+END_SRC
+   
+* (? spacemacs)
+  
+** 
+   :PROPERTIES:
+   :reveal_background: ./images/emacs-vim-icons.png
+   :reveal_background_size: 500px
+   :END:
+  
+** 
+   :PROPERTIES:
+   :reveal_background: ./images/vi_emacs_curve.jpeg
+   :reveal_background_size: 500px
+   :END:
+ 
+** 
+   :PROPERTIES:
+   :reveal_background: ./images/spacemacs_joke.jpeg
+   :reveal_background_size: 500px
+   :END:
+      
+** 
+   :PROPERTIES:
+   :reveal_background: ./images/Spacemacs_logo.png
+   :reveal_background_size: 500px
+   :END:
+
+** 
+   :PROPERTIES:
+   :reveal_background: ./images/spacemacs_curve_true_1.jpg
+   :reveal_background_size: 500px
+   :END:
+  
+* WHY spacemacs 
+  #+ATTR_REVEAL: :frag (appear)
+   - Community-driven
+   - merge evil-mode (vi keybinding)
+   - prefix key (vim)
+
+* Startup
+  - Emacs 24.4+
+
+** Unix-like 
+   - package manager (apt pacman yum homebrew)
+   - build from source code
+
+** Windows
+   #+ATTR_REVEAL: :frag (none highlight-red)
+   - emacs-w64 project
+   - 自定環境變數 HOME
+    
+** Quick Install
+   
+   git clone:
+  #+BEGIN_SRC bash
+    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+  #+END_SRC
+  or
+ #+BEGIN_EXAMPLE
+  Download .zip from Offical Site, 
+  Upzip to $HOME/ and rename to .emacs.d.
+ #+END_EXAMPLE 
+  
+** 
+   :PROPERTIES:
+   :reveal_background: images/windows_env.png
+   :reveal_background_size: 60%
+   :END:
+   
+** Three Question
+   - What is your preferred editing style?
+   - What distribution of spacemacs would you like to start with?
+   - What type of completion framwork do you want?
+
+** 
+   :PROPERTIES:
+   :reveal_background: images/spacemacs_init.gif
+   :reveal_background_size: 60%
+   :END:
+** 
+   :PROPERTIES:
+   :reveal_background: images/spacemacs_startup.png
+   :reveal_background_size: 60%
+   :END:
+     
+* Spacemacs 
+
+** Frame, Windows, Buffer
+   
+** 
+   :PROPERTIES:
+   :reveal_background: images/frame.png
+   :reveal_background_size: 1280px
+   :END:
+  
+** 
+   :PROPERTIES:
+   :reveal_background: images/window.png
+   :reveal_background_size: 1280px
+   :END:
+
+** 
+   :PROPERTIES:
+   :reveal_background: images/buffer.png
+   :reveal_background_size: 1280px
+   :END:
+** evil & holy
+   - evil (vi keybinding)
+   - holy (emacs origin keybinding)
+
+** SPC key
+   - evil (space)
+   - holy (M-m)
+
+** helm
+   
+** 
+   :PROPERTIES:
+   :reveal_background: ./images/helm_popup.gif
+   :reveal_background_size: 1024px
+   :END:
+
+
+** 
+   #+BEGIN_SRC elisp
+     dotspacemacs-configuration-layers
+     '(
+       ;; ----------------------------------------------------------------
+       ;; Example of useful layers you may want to use right away.
+       ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
+       ;; <M-m f e R> (Emacs style) to install them.
+       ;; ----------------------------------------------------------------
+       (org :variables
+            org-enable-github-support t
+            org-enable-reveal-js-support t)
+       (shell :variables
+              shell-default-height 30
+              shell-default-position 'bottom)
+       (clojure :variables clojure-enable-fancify-symbols t)
+       (python default 'unused)
+       git
+       javascript
+       nginx
+
+       ;; other layers ....
+   #+END_SRC
+   
+** 
+   :PROPERTIES:
+   :reveal_background: images/offical.png
+   :reveal_background_size: 800px
+   :END:
+   
+** 
+   :PROPERTIES:
+   :reveal_background: images/offical_layers.png
+   :reveal_background_size: 800px
+   :END:
+  
+* Emacs Lisp Intro
+ 
+** Symbol
+   #+BEGIN_SRC elisp
+     (setq symbol "val")
+     (setq-default global-symbol "val")
+   #+END_SRC
+   
+** List
+   #+BEGIN_SRC elisp
+     (list evil org python)
+   #+END_SRC
+   or
+   #+BEGIN_SRC elisp
+     '(evil org python)
+   #+END_SRC
+   
+** defun
+   #+BEGIN_SRC elisp
+     (defun cos (where)
+       "cos what?"
+       (if (string= (downcase where) "cwt")
+           (message "cosplay")
+         (message "coscup")))
+   #+END_SRC
+
+* 
+  :PROPERTIES:
+  :reveal_background: images/cat.jpg
+  :END: 
+   
+* Layer
+
+** custom layer structure 
+   #+BEGIN_EXAMPLE
+   layer +
+         |- packages.el
+         |- layers.el (optional)
+         |- funcs.el (optional)
+         |- config.el (optional)
+         |- keybindings.el (optional)
+         |- README.org (optional)
+   #+END_EXAMPLE
+   
+** create layer
+   :PROPERTIES:
+   :reveal_background: images/create_layer.gif
+   :reveal_background_size: 1024px
+   :END:
+   
+** 
+   :PROPERTIES:
+   :reveal_background: images/add_layer.png
+   :reveal_background_size: 1024px
+   :END:
+   
+** packages.el
+   #+BEGIN_SRC elisp
+     (defconst demo-packages
+       '(coscup))
+
+     ;; package init function
+     (defun demo/init-coscup ()
+       (use-package coscup))
+   #+END_SRC
+
+* key bindings
+  * "SPC o" and "SPC m o" are reserved for the user
+   #+BEGIN_SRC elisp
+     (spacemacs/set-leader-keys "oa" 'replace-string)
+   #+END_SRC 
+
+* Tip
+** private config
+   directory structure:
+   #+BEGIN_EXAMPLE
+   .spacemacs.d +
+                |- private +
+                |          |- foo.el
+                |          |- bar.el
+                |- init.el
+                |- layers
+   #+end_example
+    
+   init.el: 
+   #+BEGIN_SRC elisp
+     ;; ~/.spacemacs.d/init.el
+     (defun dotspacemacs/user-init ()
+       (mapc 'load
+             (file-expand-wildcards
+              (concat dotspacemacs-directory "private/*.el"))))
+   #+END_SRC
+   
+   .gitignore:
+   #+BEGIN_SRC text
+     private/
+   #+END_SRC
+
+** The Swirl
+
+** 
+   :PROPERTIES:
+   :reveal_background: ./images/spacemacs_curve_true_2.jpeg
+   :reveal_background_size: 1024px
+   :END:
+  
+** 
+   
+   #+BEGIN_SRC elisp
+     (defun dotspacemacs/layers ()
+
+       dotspacemacs-distribution 'spacemacs-base
+
+       ;; ...
+
+       )
+   #+END_SRC
+
+** 
+   #+BEGIN_EXAMPLE
+     .spacemacs.d/layers/+spacemacs
+     ├── hyp-completion
+     │   ├── README.org
+     │   ├── config.el
+     │   ├── funcs.el
+     │   └── packages.el
+     ├── hyp-editing
+     │   ├── README.org
+     │   ├── funcs.el
+     │   ├── local
+     ... 
+   #+END_EXAMPLE
+   
+* Thank you ˊ・ω・ˋ
+  Emacser.tw: 
+  [[https://emacser.tw]] 
